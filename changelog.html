@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Impact Changelog | Changes to past, present and future version of Impact, the utility mod for Minecraft</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Impact Changelog" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Changes to past, present and future version of Impact, the utility mod for Minecraft" />
+<meta property="og:description" content="Changes to past, present and future version of Impact, the utility mod for Minecraft" />
+<link rel="canonical" href="https://impactclient.net/changelog" />
+<meta property="og:url" content="https://impactclient.net/changelog" />
+<meta property="og:site_name" content="Impact Changelog" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Impact Changelog" />
+<script type="application/ld+json">
+{"headline":"Impact Changelog","description":"Changes to past, present and future version of Impact, the utility mod for Minecraft","url":"https://impactclient.net/changelog","@type":"WebPage","@context":"https://schema.org"}</script>
+
+<link rel="stylesheet" href="Impact/assets/css/style.css%3Fv=19dac4f5f785d924db9f9de6d6f9f92e1372d36c.css">
+<script>
+        (function(){
+            function shouldRedirect(host, path) {
+                return host.toLowerCase() === "impactdevelopment.github.io" ||
+                       path.toLowerCase() === "/impact/changelog"
+            }
+            function redirect(url) {
+                try { window.location.replace(url); }
+                catch(e) { window.location = url; }
+            }
+
+            if (shouldRedirect(window.location.hostname, window.location.pathname)) {
+                redirect("https://impactclient.net/changelog")
+            }
+        })()
+    </script>
+</head>
+<body>
+<div class="container-lg px-3 my-5 markdown-body">
+<h1 id="changelog">Changelog</h1>
+<p>All notable changes to this project will be documented in this file.</p>
+<p>The format is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> <del>and this project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</del></p>
+<h2 id="upcoming-already-available-to-donators">Upcoming (already available to <a href="https://impactdevelopment.github.io/#donate">donators</a>)</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>Experimental 1.16.4 support</li>
+</ul>
+<h2 id="491">4.9.1</h2>
+<h3 id="added-1">Added</h3>
+<ul>
+<li>(1.13+) A File picker GUI to replace the broken Alt Import/Export dialogs</li>
+<li>Added “Active” setting to Breadcrumbs to disable position recording</li>
+<li>Added “breadcrumbs” command to save/load/clear breadcrumbs</li>
+<li>A <code class="language-plaintext highlighter-rouge">Randomize</code> module that randomly switches between hotbar slots</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>“Editions” watermarks such as “Impact Premium Edition” are now controlled by an API</li>
+<li>Changed the maximum Gamma in Light from 10 to 12</li>
+<li>Entities are now sorted in Shader ESP, closer ones will actually appear closer.</li>
+<li>Moved the <code class="language-plaintext highlighter-rouge">Impact Capes</code> controls from the <code class="language-plaintext highlighter-rouge">Customize Skin</code> GUI to a <code class="language-plaintext highlighter-rouge">Capes</code> module in the <code class="language-plaintext highlighter-rouge">Render</code> category, with added configurability.</li>
+</ul>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Fixed ClickGUI arrow key scrolling on 1.12.2</li>
+<li>Fixed <code class="language-plaintext highlighter-rouge">.set</code> not working on submodes of modules (e.g. now <code class="language-plaintext highlighter-rouge">.set elytra+ basespeed 6.338</code> does work)</li>
+<li>Fixed the “Created by” credits link not working on 1.13+</li>
+<li>Fixed Nametags disappearing when more than 230 blocks above the player (same source as issue 1235 applied to Nametags instead of Tracers)</li>
+<li>Fixed one tick of keyboard input leaking through to the player while in Freecam whenever a Baritone path ended</li>
+<li>Fixed Auto Walk interfering with Freecam (<a href="https://github.com/ImpactDevelopment/ImpactIssues/issues/1679">#1679</a>)</li>
+<li>Fixed HUD coords orientation not respecting Freecam setting</li>
+<li>Fixed Self Destruct not hiding the profile version in the debug screen</li>
+<li>Fixed Capes not displaying a full texture on 1.13+</li>
+<li>Fixed Fast Render disable not being applied on 1.13+</li>
+<li>Fixed Nametags, Tracers, and 2D ESP not rendering properly when the player’s hand isn’t visible.</li>
+<li>Fixed Freecam behavior in 1.14+ to match that of previous versions</li>
+<li>Fixed XRay compatibility with OptiFine on 1.13+</li>
+<li>Fixed first letter cutoff in “.plugins” command on 1.13+</li>
+<li>Fixed features managed by “.gui” not being saved</li>
+<li>Fixed Elytra+ Control mode being affected by the Speed potion effect</li>
+<li>Fixed render module compatibility with alternate view entities</li>
+<li>Clicking entries in the Macros and Friends GUIs (1.14+) (<a href="https://github.com/ImpactDevelopment/ImpactIssues/issues/2191">#2191</a>)</li>
+</ul>
+<h2 id="483">4.8.3</h2>
+<h3 id="added-2">Added</h3>
+<ul>
+<li>Added basic support for <a href="https://thealtening.com">TheAltening</a> (<a href="https://github.com/ImpactDevelopment/ImpactIssues/issues/1832">#1832</a>)</li>
+</ul>
+<h3 id="fixed-1">Fixed</h3>
+<ul>
+<li>Fixed Alt GUI background displaying incorrectly while in-game (1.14+ only)</li>
+<li>Fixed Alt GUI’s scrollbar (1.13+)</li>
+<li>Fixed Alt GUI’s preview player sometimes turning into steve or alex</li>
+<li>Fixed .set command being unable to set some number values</li>
+<li>TextLinks not being clickable when right-aligned</li>
+</ul>
+<h2 id="482">4.8.2</h2>
+<h3 id="fixed-2">Fixed</h3>
+<ul>
+<li>Fixed ClickGUI bind going into search box (<a href="https://github.com/ImpactDevelopment/ImpactIssues/issues/1732">#1732</a>)</li>
+<li>Fixed keybinds activating at the same time as search characters (<a href="https://github.com/ImpactDevelopment/ImpactIssues/issues/1745">#1745</a>)</li>
+<li>Fixed Scaffold in 1.14.4 causing equip sound spam (<a href="https://github.com/ImpactDevelopment/ImpactIssues/issues/1599">#1599</a>)</li>
+<li>Updated Baritone to 1.4.3, fixing Search and various chat commands (1.14.4 only)</li>
+<li>Role colors not being parsed correctly if hex values</li>
+</ul>
+<h2 id="481">4.8.1</h2>
+<h3 id="added-3">Added</h3>
+<ul>
+<li>Added 1.14.4 support</li>
+<li>Added a Positive option to Flight NCP which prevents void damage on some servers (with strange anticheats)</li>
+<li>Added a Skulls option to Auto Armor which prioritizes skull items (such as dragon heads 😉) over all other possible helmets</li>
+<li>Added a Reload Chunks option to Freecam which reloads rendered chunks on enable and disable</li>
+<li>Added a Search option to ClickGUI that highlights whatever modules match your typed query</li>
+<li>Added bite detection modes to AutoFish</li>
+<li>Added Biome HUD widget (<a href="https://github.com/ImpactDevelopment/ImpactIssues/issues/1650">#1650</a>)</li>
+<li>Added a Elytra option to Auto Armor which prioritizes Elytra over all other possible chestplates</li>
+<li>Added a Text Shadow to HUD which controls the pixel offset of the shadow of all text Impact draws</li>
+<li>Added many many new options to Tracers to precisely control the behavior, such as the tracer color change based on the distance to the target</li>
+</ul>
+<h3 id="changed-1">Changed</h3>
+<ul>
+<li>Reordered Entities HUD widget to be the last one displayed</li>
+<li>Changed default position of ClickGUI panes to be left to right instead of stacked top to bottom</li>
+</ul>
+<h3 id="fixed-3">Fixed</h3>
+<ul>
+<li>Fixed Main Menu hide text not actually hiding all the text</li>
+<li>Fixed Freecam crashing while enabled on the main menu</li>
+<li>Fixed a projection crash on certain servers (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1575">#1575</a>)</li>
+<li>Fixed a rare Baritone related crash on changing dimensions</li>
+<li>Fixed wobble in Search (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1634">#1634</a>)</li>
+<li>Fixed a rare ESP2D crash (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1677">#1677</a>)</li>
+<li>Fixed Tracers inverting at different Y coordinates (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1235">#1235</a>)</li>
+<li>Fixed squid and dolphins not being targetable in 1.13+ (<a href="https://github.com/ImpactDevelopment/ImpactIssues/issues/1689">#1689</a>)</li>
+<li>Fixed premium check with OptiFine (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1592">#1592</a>)</li>
+<li>Fixed StorageESP for Item Frames incorrectly rendering all in the same orientation</li>
+<li>Fixed issue where empty suffixes were still considered in HUD</li>
+<li>Fixed crash caused by saving malformed assets to disk (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1652">#1652</a>)</li>
+</ul>
+<h2 id="473">4.7.3</h2>
+<h3 id="fixed-4">Fixed</h3>
+<ul>
+<li>Fixed the bundled installer not properly updating to 1.14.4’s OptiFine</li>
+</ul>
+<h2 id="472">4.7.2</h2>
+<h3 id="fixed-5">Fixed</h3>
+<ul>
+<li>Fixed Flight mode NCP not enabling</li>
+<li>Fixed ESP Shader not soft failing on old OpenGL</li>
+<li>Fixed visual misalignment of the main menu</li>
+</ul>
+<h2 id="471">4.7.1</h2>
+<h3 id="added-4">Added</h3>
+<ul>
+<li>Added new “Fill” option to Shader ESP with an opacity suboption</li>
+<li>Added text saying how to hide the Steal button on a chest</li>
+<li>Added commands to save and reload spam config from disk without having to restart (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1243">#1243</a>)</li>
+<li>Added Yaw lock (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/417">#417</a>)</li>
+<li>Added more options for the Main Menu background, and an option to randomize the selection</li>
+<li>Added Nametags drawn on sound effects (aka Sound ESP)</li>
+<li>Added a height setting to Breadcrumbs to draw above blocks like snow or soul sand (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1280">#1280</a>)</li>
+<li>Added a premium only feature to remove all the text from the top left of the main menu (GhOsT cLiEnT) (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1297">#1297</a>)</li>
+<li>Added a way to specify different Tracer colors for Hostiles vs Passives (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1293">#1293</a>)</li>
+<li>Added a new Flight mode for NCP</li>
+<li>Added commands <code class="language-plaintext highlighter-rouge">.preset save</code> and <code class="language-plaintext highlighter-rouge">.preset load</code> for all of Impact’s settings (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1298">#1298</a>)</li>
+<li>Added an option to HUD coords to show freecam position instead of player position (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1184">#1184</a>)</li>
+<li>Added Anti Sound Lag (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1295">#1295</a>)</li>
+<li>Added an option to disable typing the prefix opening the chat box (<code class="language-plaintext highlighter-rouge">.prefix openschat</code>) (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1067">#1067</a>)</li>
+<li>Added the installer built into the client. Clicking the Install button will open the Impact installer, instead of the website. Patch releases can be installed as easy as a single button. (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1229">#1229</a>)</li>
+<li>Added an option to ESP to include end crystals, boats, and armor stands (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1294">#1294</a>)</li>
+<li>Added an Anti Weakness option to Crystal Aura which sets off crystals with a sword when the weakness effect is present</li>
+<li>Added an option to disable the Totem overlay in Anti Overlay (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1388">#1388</a>)</li>
+<li>Added Nether Quartz Ore preset option to Auto Mine (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1389">#1389</a>)</li>
+<li>Added an Auto Farm module under Player (just a wrapper for Baritone’s FarmProcess)</li>
+<li>Added an option to disable the Elder Guardian effect in Anti Overlay (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1388">#1388</a>)</li>
+</ul>
+<h3 id="changed-2">Changed</h3>
+<ul>
+<li>Made module category and name changes described in <a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1103">#1103</a></li>
+<li>Renamed “Rainbow Enchant” to “Enchant Color”, with the support of making the enchant glint any color</li>
+<li>Added scaling options to players, items, and tamed under Nametags (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1051">#1051</a>)</li>
+<li>Moved Lag Meter from its own module to a suboption under HUD (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1065">#1065</a>)</li>
+<li>Decreased minimum Respawn delay from 2500ms to 250ms</li>
+<li>Decreased minimum AntiAFK swing speed from 1 to 0.01 (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1157">#1157</a>)</li>
+<li>Increased maximum speed for Elytra+ Control mode from 6 to 30 (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1325">#1325</a>)</li>
+<li>Color picker now saves rainbow status between sessions (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/766">#766</a>)</li>
+</ul>
+<h3 id="fixed-6">Fixed</h3>
+<ul>
+<li>Fixed ESP Shader mode not rendering Phantoms with the right color, caused by their eye layer</li>
+<li>Fixed thread unsafe operation in Chest Stealer that could result in a game crash</li>
+<li>Fixed URL links not working in 1.13.2+ (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1151">#1151</a>)</li>
+<li>Fixed Lag Meter rendering in singleplayer (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1065">#1065</a>)</li>
+<li>Fixed Alt manager hanging when Randomizing 0 alts (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1225">#1225</a>)</li>
+<li>Fixed spelling of the word “Assassins”</li>
+<li>Fixed Velocity partially inverting knockback by default (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1168">#1168</a>)</li>
+<li>Fixed <code class="language-plaintext highlighter-rouge">.locate</code> for everything except Stronghold and Nether Fortress on 1.12.2 only, still broken on 1.13.2</li>
+<li>Fixed item collation under Inventory (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1236">#1236</a>)</li>
+<li>Fixed ClickGUI instantly re-opening itself when toggled off ingame (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1258">#1258</a>)</li>
+<li>Fixed blurring of ClickGUI background while scaling (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1272">#1272</a>)</li>
+<li>Fixed Nametag and Tracer rare jitter (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1257">#1257</a>)</li>
+<li>Fixed Light being totally broken (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1220">#1220</a>)</li>
+<li>Fixed typo in Player selector alt text</li>
+<li>Fixed inverted check in Auto Armor (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1283">#1283</a>)</li>
+<li>Fixed crash caused by server sending faulty data (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1241">#1241</a>)</li>
+<li>Fixed crash when Step mode switched outside of world (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1102">#1102</a>)</li>
+<li>Fixed FastLadder under Terrain not working on 1.13.2 (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1313">#1313</a>)</li>
+<li>Fixed Jesus interfering with Freecam player movement on 1.12.2 (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1291">#1291</a>)</li>
+<li>Fixed AntiAFK and AutoWalk interference with Freecam player movement (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/679">#679</a>)</li>
+<li>Fixed Murder (Hypixel) not detecting the murderer if they are using a cookie weapon (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/861">#861</a>)</li>
+<li>Fixed Anti Hunger taking accumulated fall damage when walking into water</li>
+<li>Fixed some broken checks in Crystal Aura</li>
+<li>Fixed freecam causing unexpected behavior with debug chunk borders (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1128">#1128</a>)</li>
+<li>Fixed potential issues with Auto Disconnect acting if the local player is dead (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1349">#1349</a>)</li>
+<li>Fixed inconsistent functionality of Jesus when riding an animal on water (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1233">#1233</a>)</li>
+<li>Fixed AutoEat not working when chat is open (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1110">#1110</a>)</li>
+<li>Fixed Terrain’s Ladder Speed not working on the 1.13.2 version (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1313">#1313</a>)</li>
+<li>Fixed Crystal Aura not properly syncing the held item (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1140">#1140</a>)</li>
+<li>Fixed Kill Aura not using Auto Weapon</li>
+<li>Fixed Auto Weapon not firing (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1314">#1314</a>)</li>
+<li>Fixed Freecam not respecting the real player’s stats (health, armor, etc.) (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1290">#1290</a>)</li>
+<li>Fixed rare crash with Storage ESP when server sends faulty data (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1380">#1380</a>)</li>
+<li>Fixed poor filter order resulting in Kill Aura Ray Tracing causing FPS drops (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/903">#903</a>)</li>
+<li>Fixed timer speed not being taken into account with player speed on HUD</li>
+<li>Fixed Auto Eject crash when picking up a throwaway item and in another inventory (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1371">#1371</a>)</li>
+</ul>
+<h2 id="46">4.6</h2>
+<h3 id="added-5">Added</h3>
+<ul>
+<li>Added suffix to Weather that indicates <strong>Thunder</strong>, <strong>Rain</strong> or <strong>Clear</strong></li>
+<li>Added options to Trajectories to end on an entity, and to draw a correct centered tracer</li>
+<li>Added Tracers option to Search (i.e. portal tracers)</li>
+<li>Added option to include dropped items in Nametags</li>
+<li>Added TTF option to Nametags</li>
+<li>Added Collate option under Nametags Item Option
+<ul>
+<li>Will join together item tags so that they become readable</li>
+</ul>
+</li>
+<li>Added an option “Ignore Dungeons” to StorageESP to not render chests near Mob Spawners (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/995">#995</a>)</li>
+<li>Added a persistence option to Auto Walk (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1001">#1001</a>)</li>
+<li>Added “toggle” and “random” modes for Skin Blinker</li>
+<li>Added option for every model part in Skin Blinker</li>
+<li>Added Tridents to Trajectories</li>
+<li>Added line width option to Trajectories</li>
+<li>Added option to Anti Overlay to hide boss health bars</li>
+<li>Added optional rendering of the target to Crystal Aura (highlighting both to place and to set off) (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/987">#987</a>)</li>
+<li>Added Lag Meter: notifies you when no packets have been received from the server since a certain amount of time</li>
+<li>Added Durability option to Inventory, to show correct durability in item mouseover tooltip even when damage is negative (e.g. unbreakables) (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1011">#1011</a>)</li>
+<li>Added Tamed option to Nametags, to show which player owns tamable mobs (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/909">#909</a>)</li>
+<li>Added a GUI to manage the Search module</li>
+<li>Added a new Speed mode called On Ground</li>
+</ul>
+<h3 id="changed-3">Changed</h3>
+<ul>
+<li>Made complete entity removal in No Render an option</li>
+<li>Made NCP step ensure the player cannot move while it is waiting ticks to step</li>
+<li>Minor tweaks to the Light brightness fade</li>
+<li>Made “Yaw/Pitch Speed” options in Inventory sub-options of “Look Around”</li>
+<li>Made ClickGUI Scale a slider instead of a checkbox, and made it keep old scale while dragging</li>
+<li>Changed minimum AutoReconnect time delay from 2500ms to 200ms</li>
+</ul>
+<h3 id="fixed-7">Fixed</h3>
+<ul>
+<li>Fixed breadcrumbs applying across dimensions</li>
+<li>Fixed breadcrumbs not clearing upon dying</li>
+<li>Fixed sky and rain flickering caused by Weather (“Clear” Mode)</li>
+<li>Fixed Trajectories raytracing when an arrow went out of your line of sight (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/962">#962</a>)</li>
+<li>Fixed Fast Ladder still working in Terrain even when the module is off</li>
+<li>Fixed strange tick rounding in Trajectories</li>
+<li>Fixed Tracers randomly jumping to the other side of the screen when looking close to 90° away from an entity (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/55">#55</a>)</li>
+<li>Made font loading on initial startup about 3x faster (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/980">#980</a>)</li>
+<li>Fixed “NullPointerException” disconnects caused by Log Position</li>
+<li>Fixed Unpack not working with iron blocks and instead recognizing iron ore</li>
+<li>Fixed issue with font renderer where italic and bold characters were not accounted for when calculating string width/height</li>
+<li>Fixed Auto Eat right clicking chests and other containers instead of eating</li>
+<li>Fixed Auto Totem crashing when shift clicking your first totem out of a hopper (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/993">#993</a>)</li>
+<li>Fixed Skin Blinker not working effectively</li>
+<li>Fixed Flight sending No Kick packets that could cause damage</li>
+<li>Fixed the Allow Place suggestion message triggering at the wrong time (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1006">#1006</a>)</li>
+<li>Fixed Crosshair+ drawing on top of the normal crosshair</li>
+<li>Fixed Anti Desync sending completely incorrect packets that get flagged immediately and lag you back</li>
+<li>Fixed Velocity’s behavior regarding zeroing velocity vs change in velocity (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1009">#1009</a>)</li>
+<li>Fixed some Baritone goals not rendering in Radar</li>
+<li>Fixed Anti Desync breaking in singleplayer (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1043">#1043</a>)</li>
+<li>Fixed OptiFine’s cape button not being moved out of our way (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1028">#1028</a>)</li>
+<li>Fixed time formatting in Log Position regarding month vs minute</li>
+<li>Fixed Speed not respecting Baritone’s freeLook direction</li>
+<li>Fixed font height causing extra blank space in ClickGUI tooltips</li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li>Removed Screenshot Uploader</li>
+</ul>
+<h3 id="hotfixes">Hotfixes</h3>
+<ul>
+<li>Fixed a crash when launching on Linux due to a misconfigured obfuscator</li>
+<li>Fixed a crash due to a 1.13 block rename in Auto Mine</li>
+<li>Fixed entries in ClickGUI showing up in incorrect order due to a misconfigured obfuscator</li>
+<li>Fixed capes rendering at incorrect resolution (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1060">#1060</a>)</li>
+<li>Fixed incorrect version displaying in the HUD (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1069">#1069</a>)</li>
+<li>Fixed a crash on toggling Impact cape (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1057">#1057</a>)</li>
+<li>Fixed mob targeting in 1.13 relating to Phantoms (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1062">#1062</a>)</li>
+<li>Fixed a crash relating to potion effects in freecam (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1058">#1058</a>)</li>
+<li>Fixed ClickGUI scrolling not working on some systems (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1061">#1061</a>)</li>
+<li>Fixed incorrect press vs release logic in Middle Click Friends</li>
+<li>Fixed incorrect rendering of potion effects above modules (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1064">#1064</a>)</li>
+<li>Fixed a crash in Search when the shader cannot be created</li>
+<li>Fixed potential crashes related to ResourceLocations (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1052">#1052</a>)</li>
+<li>Fixed behavior of Jesus on waterlogged blocks e.g. kelp (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1063">#1063</a>)</li>
+<li>Fixed crash when mining redstone ore (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/1121">#1121</a>)</li>
+</ul>
+<h2 id="45">4.5</h2>
+<h3 id="added-6">Added</h3>
+<ul>
+<li>Added a GUI to manage and create <a href="https://github.com/ImpactDevelopment/ImpactClient/issues/153">Macros</a>. A macros system was added in 4.3, but they could only be managed by manually editing the json file.</li>
+<li>Added a color option to Trajectories</li>
+<li>Added error message to Auto Walk “Smart Mode” indicating path calculation failure</li>
+<li>Added a multiplier option to Strafe Speed</li>
+<li>Added Slime option to No Slow</li>
+<li>Added SoulSand option to No Slow</li>
+<li>Added Inventory Open option to Auto Armor</li>
+<li>Added Reverse and Multiplier to horizontal and vertical Velocity options</li>
+<li>Added Chance option to Velocity</li>
+<li>Added Auto Close option to Chest Stealer</li>
+<li>Added Packet Mode to Chest Stealer
+<ul>
+<li><strong>Shift</strong>: Shift-clicks items into your inventory</li>
+<li><strong>Pickup</strong>: Performs 2 clicks, one to take the item out of the chest, another to put it in your inventory</li>
+</ul>
+</li>
+<li>Added Placement option for Crystal Aura</li>
+<li>Added GUI that displays if Baritone was not successfully loaded to prevent unexpected behavior</li>
+<li>Added an option to ClickGUI to use Minecraft’s GUI scaling</li>
+<li>Adjustable max distance for Tracers</li>
+<li>Separate color for Player entities (Will include others soon)</li>
+<li>Integration with Baritone’s processes system for more seamless interaction</li>
+<li>Added Item Frame support to Storage ESP</li>
+<li>Added New Chunks exploit</li>
+<li>Added Suicide option to Crystal Aura
+<ul>
+<li><strong>Avoid</strong>: Don’t do anything that could kill you</li>
+<li><strong>Place</strong>: Place crystals that could kill you</li>
+<li><strong>Commit</strong>: Place and hit crystals that could kill you</li>
+</ul>
+</li>
+<li>Expose all legit mine Baritone options to Auto Mine</li>
+<li>Add Logs to Auto Mine “Bot Mode” default targets</li>
+<li>Added freecam compatibility with everything
+<ul>
+<li>Thanks leijurv for the scuffed idea of how to do it</li>
+<li>This means that there should be no conflicts with using Freecam with everything, your “real player” will behave as expected when you’re not using Freecam in all circumstances
+<ul>
+<li>Aka, you can path using Baritone AND use Freecam simultaneously, it’s really neat</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="changed-4">Changed</h3>
+<ul>
+<li>Changed Ladder Speed in Terrain to have a speed multiplier instead of an obscure speed value</li>
+<li>Changed Category of CrosshairPlus from Misc to Render</li>
+<li>Changed how the Teammate and Friend settings work for ESP and Tracers
+<ul>
+<li>There are now 3 modes: <strong>Include</strong>, <strong>Restrict</strong>, and <strong>Only</strong></li>
+<li><strong>Include</strong>: Players in this category are included</li>
+<li><strong>Restrict</strong>: Players in this category are not included</li>
+<li><strong>Only</strong>: Only players in this category are included</li>
+</ul>
+</li>
+</ul>
+<h3 id="fixed-8">Fixed</h3>
+<ul>
+<li>Fixed Minestrike module team check</li>
+<li>Fixed ClickTP sending item interaction packets when teleporting</li>
+<li>Fixed potential <code class="language-plaintext highlighter-rouge">ConcurrentModificationException</code> in Anti Vanish</li>
+<li>Fixed crash caused by disabling sprint when not in game</li>
+<li>Fixed CrosshairPlus rendering when <code class="language-plaintext highlighter-rouge">hideGUI</code> is true (From pressing F1)</li>
+<li>Fixed Module Mode settings not loading</li>
+<li>Fixed Flight Anti Kick option causing actual teleports to the ground under some circumstances</li>
+<li>Fixed No Slow Item modifier not applying</li>
+<li>Fixed easy way for servers to detect No Rotate</li>
+<li>Sync Preserve Y in Smart Auto Walk with simplifyUnloadedYCoord</li>
+<li>Fixed random quote in Baritone first-time message</li>
+<li>Fixed decimal value instead of integer for the node count in Breadcrumbs</li>
+<li>Fixed the unhelpful usage provided by <code class="language-plaintext highlighter-rouge">.help baritone</code></li>
+<li>Fixed bug that caused some forms of block breaking to be detectable by servers</li>
+<li>Fixed capes still showing after Self Destruct has been activated</li>
+<li>Fixed colossal amount of <code class="language-plaintext highlighter-rouge">CallbackInfo</code> objects being instantiated which could have a considerable memory and performance impact
+<ul>
+<li>Thank you leijurv for pushing me to actually fix this</li>
+</ul>
+</li>
+<li>Fixed inconsistent behavior of Anti Hazard’s magma option depending on cardinal direction</li>
+<li>Fixed poor animation smoothing for the module list</li>
+</ul>
+<h3 id="hotfixes-1">Hotfixes</h3>
+<ul>
+<li>Fixed not showing Nametags or Tracers for the player while in Freecam (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/944">#944</a>)</li>
+<li>Fixed Freecam no longer sharing the player’s inventory (4.5 regression) (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/946">#946</a>)</li>
+<li>Fixed Freecam being affected by F5 mode (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/947">#947</a>)</li>
+<li>Fixed New Chunks ignoring their dimension (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/950">#950</a>)</li>
+<li>Fixed <code class="language-plaintext highlighter-rouge">.goto</code> not working as expected (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/948">#948</a>)</li>
+<li>Freecam will now disable when the real player dies (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/940">#940</a>)</li>
+<li>Fixed bad team check applying to all combat modules (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/945">#945</a>)</li>
+<li>Fixed having to run some Baritone commands twice (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/943">#943</a>)</li>
+<li>Fixed Auto Walk having a higher priority than Baritone processes</li>
+<li>Added Hunt</li>
+<li>Fixed background of Main Menu (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/846">#846</a>)</li>
+<li>Fixed Font resolution (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/906">#906</a>)</li>
+<li>Fixed Damn Daniel (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/842">#842</a>)</li>
+<li>Added a way to secretly close an inventory without telling the server. Inventory -&gt; Secret Close (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/913">#913</a>)</li>
+<li>Fixed Freecam not being responsive to real player health, hunger, potions, etc. (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/959">#959</a>)</li>
+<li>Fixed inverted immune check in Kill Aura</li>
+<li>Fixed flowing water check in Jesus</li>
+<li>Fixed a check in Crystal Aura that was off by 1 heart</li>
+<li>Fixed a crash in the Macros GUI when typing without a textbox focused</li>
+<li>Fixed Freecam being unable to break / place blocks (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/938">#938</a>)</li>
+<li>Fixed Anti Hazard not avoiding cactus, fire, and pressure plates (<a href="https://github.com/ImpactDevelopment/ImpactClient/issues/961">#961</a>)</li>
+</ul>
+<h2 id="44">4.4</h2>
+<h3 id="added-7">Added</h3>
+<ul>
+<li>Tower option for Scaffold</li>
+<li>Lethal option for No Fall Bucket mode to only place water when the fall is lethal</li>
+<li>Debug option for Scaffold to allow for better visualization of block placement</li>
+<li>Delay option for Auto Clicker to use 1.9 attack cooldown
+<ul>
+<li>Also added TPS Sync sub-option to sync swing delay with TPS</li>
+</ul>
+</li>
+<li>Discord RPC support</li>
+<li>No SRP module, prevents servers from forcing resource packs</li>
+<li>Added name case change exploit as a command (.rename)</li>
+<li>Added ESP color types (Custom, Team, Health)</li>
+<li>Allow Auto Totem to access crafting slots to retrieve Totems
+<ul>
+<li>Should be combined with Inventory’s “Extra Slots” feature</li>
+</ul>
+</li>
+<li>Added Fancy Chat module to type in alternative latin charsets</li>
+<li>Added command to check fall damage to a block (.falldamage)
+<ul>
+<li>Checks the fall damage to the block you are looking at</li>
+</ul>
+</li>
+<li>Added Ping Spoof module</li>
+<li>Added Integration with Baritone
+<ul>
+<li>Add Auto Mine Bot Mode</li>
+<li>Add Auto Walk Smart Mode</li>
+<li>Add Baritone configuration in GUI</li>
+<li>Made Radar show current calculating and executing path</li>
+<li>and more!</li>
+</ul>
+</li>
+<li>Added Bot option to Auto Mine (Automatically mine to ores)</li>
+<li>Added Lava and Portals to Xray by default</li>
+<li>Added Durability option to Item Saver. Ranges from 0-50% where 0% represents 0 durability.</li>
+<li>Added Immune option to Kill Aura. If on, will only attack entities that aren’t immune to damage.</li>
+<li>Added Web mode to NoFall, functions the same as Bucket except is able to place webs.</li>
+<li>Added visible ticks option to Minestrike</li>
+<li>Added prioritization modes to Minestrike (Currently world distance and crosshair distance)</li>
+<li>Added aim type to Minestrike, allowing the user to choose when the aimbot should lock on
+<ul>
+<li>Options are Always and (when) Shooting</li>
+</ul>
+</li>
+<li>Added “Dolphin” fallback to Jesus Solid mode when flowing is off</li>
+<li>Added a built in color picker to the Click Gui</li>
+<li>Added Block ESP/Search along with a .search command</li>
+<li>Added Extended Tooltips option to Click GUI
+<ul>
+<li>Will show the name of the component as well as it’s description when hovered</li>
+</ul>
+</li>
+<li>Added ToggleTab
+<ul>
+<li>Can be enabled/disabled with <code class="language-plaintext highlighter-rouge">.gui toggletab &lt;enable/disable&gt;</code></li>
+</ul>
+</li>
+<li>Added Time widget to HUD</li>
+<li>Added Item Use option to Auto Clicker
+<ul>
+<li>Toggle the ability to use items and have Auto Clicker work simultaneously</li>
+</ul>
+</li>
+<li>Added Portal God Mode exploit</li>
+<li>Path option in Radar to make Baritone’s current path optional</li>
+<li>Stipple option in Radar to enable/disable path line stippling</li>
+</ul>
+<h3 id="changed-5">Changed</h3>
+<ul>
+<li>Separated horizontal and vertical speed in Freecam</li>
+<li>Changed Fast Interact’s Fast Break option from breaking blocks faster to lowering block break delay</li>
+<li>Made latency compensation in the Minestrike module optional</li>
+<li>Xray and Nuker config files will now use namespace block ids instead of numerical</li>
+<li>Moved TPS Sync option to Kill Aura from Delay Mode (The Immune option uses it)</li>
+<li>Made Auto Shoot an option in Minestrike (Was previously on by default)</li>
+<li>Utilize the new Color Picker on all modules with customizable colors</li>
+<li>Keybinds are now saved as strings, improving future compatibility</li>
+<li>Made horizontal and vertical velocity options affect explosions in Velocity module</li>
+<li>Renamed Portal GUI to Portals
+<ul>
+<li>Added God Mode exploit</li>
+</ul>
+</li>
+</ul>
+<h3 id="removed-1">Removed</h3>
+<ul>
+<li>Removed Item Physics</li>
+</ul>
+<h3 id="fixed-9">Fixed</h3>
+<ul>
+<li>Fixed uncommon crash caused by GuiTextContainingLinks</li>
+<li>Fixed Scaffold not working on NCP due to bad angles</li>
+<li>Fixed Scaffold providing server with suspicious looking packets</li>
+<li>Fixed Scaffold crashing under specific conditions</li>
+<li>Fixed Riding causing boats to bob if the swim option is checked</li>
+<li>Step working when in water or lava</li>
+<li>Fixed enum type values not saving/loading properly
+<ul>
+<li>Only affected options for HUD module</li>
+</ul>
+</li>
+<li>Fixed bug with Auto Tool that caused game to crash under specific circumstances
+<ul>
+<li>Crashed when there was not a valid tool on the hotbar and it has not previously succeeded</li>
+</ul>
+</li>
+<li>Fixed boat rotation in the Riding module
+<ul>
+<li>Boats now rotate to the direction that you’re looking</li>
+<li>Fixed “strafing” while in boats</li>
+</ul>
+</li>
+<li>Fixed Anti Vanish causing the game to crash</li>
+<li>Fixed Flowing option for Jesus Solid mode</li>
+<li>Fixed ColorType values loading with 0 opacity</li>
+<li>Fixed Criticals not working while sprinting</li>
+<li>Fixed issues caused by Fast Render by forcefully disabling it</li>
+<li>Fixed hopper and furnace minecarts not being shown by Storage ESP</li>
+<li>Fixed the ability to execute other commands during spam setup</li>
+<li>Fixed not being able to place end crystals at sky limit (Vanilla bug)</li>
+<li>Fixed Anti Hazard not working on fire</li>
+<li>Fixed rare occurance of server receiving angles that were out of bounds</li>
+<li>Fixed Ignite not breaking blocks that are preventing ignition of targets</li>
+<li>Fixed Auto Eat not working while in a GUI screen</li>
+<li>Fixed Freecam causing kicks on some servers, and in general, not functioning as expected</li>
+<li>Fixed Scaffold not being able to place slabs correctly</li>
+<li>Fixed Scaffold not being able to place blocks off of glass</li>
+<li>Fixed Scaffold not being able to place in positions that are replaceable</li>
+<li>Minor improvements to Crosshair+</li>
+<li>Fixed issue with Self Destruct that did not restore GUIs fully</li>
+<li>Fixed No Slow water option preventing moving up</li>
+<li>Fixed Perspective not having an expected angle change</li>
+<li>Fixed incomplete description of Fire option for Anti Hazard</li>
+<li>Fixed movement input being passed through while in chat and Anti AFK is on</li>
+<li>Fixed lighting bug caused by Shader ESP</li>
+<li>Fixed path rendering in radar not respecting Baritone color settings</li>
+</ul>
+<h2 id="43">4.3</h2>
+<h3 id="added-8">Added</h3>
+<ul>
+<li>Button to open Click GUI from the Impact menu</li>
+<li>Ability to open chat while Click GUI is open</li>
+<li>“Main Menu” entry in Click GUI’s Render section
+<ul>
+<li>Toggle using Impact’s custom main menu</li>
+<li>Toggle using Impact’s replacement menu wallpaper</li>
+</ul>
+</li>
+<li>Clickable links and line-wrapping in the MOTD header</li>
+<li>Colored sign text exploit</li>
+<li>Movement speed widget in the HUD</li>
+<li>Customization for suffixes in module list</li>
+<li>Pause option for Click GUI</li>
+<li>Opacity option for Click GUI</li>
+<li>Option to blur background of Click GUI frames</li>
+<li>Option to save logout positions in Log Position</li>
+<li>Rank option for Nametags to show team prefix and suffix</li>
+<li>Catch Delay option for AutoFish (might help with fussy servers)</li>
+<li>Jump option for the strafe speed mode</li>
+<li>Skylight option for light module to prevent skylight lag machines from working</li>
+<li>Totem counter option to Auto Totem</li>
+<li>Auto Break option for nuker</li>
+<li>Origin option for nuker to choose the break origin</li>
+<li>Target option for nuker to choose the blocks targetted</li>
+<li>Filter option for nuker to use the nuker ID list</li>
+<li>Crosshair prioritization mode for Kill Aura</li>
+<li>Swing option for Scaffold</li>
+<li>Shulker Tooltip option for Inventory to change the tooltip length</li>
+<li>Shulker Coallate option for Inventory to group item stacks together in the tooltip</li>
+<li>Option to only shoot when scoped for Minestrike module</li>
+<li>Option to ignore attacking friends for Minestrike module</li>
+<li>Support for offhand in Scaffold
+<ul>
+<li>Added option to prioritize offhand which is on by default</li>
+</ul>
+</li>
+<li>Swing option for breaker to show breaking on the client side</li>
+<li>“Reconnect” command that quickly disconnects and reconnects the user from their current server</li>
+</ul>
+<h3 id="changed-6">Changed</h3>
+<ul>
+<li>Use player’s team color in Nametags</li>
+<li>AutoFish options should be clearer now</li>
+<li>AutoFish AutoCast is now off by default</li>
+<li>Automatically focus the username field when creating an Alt</li>
+<li>Alts are now stored in a json format to enable future fanciness</li>
+<li>Significantly improve scaffold in all movement directions</li>
+<li>Improve jitter on Auto Clicker</li>
+<li>Added mineplex support for team check</li>
+<li>Freecam is now always in first person view</li>
+<li>Moved Inventory to the Misc category, updated its description and made move an option</li>
+<li>Click GUI menus now stay on the screen at all times</li>
+<li>Click GUI menus are now easier to navigate
+<ul>
+<li>Clicking the arrows next to modules will open the submen</li>
+<li>Double clicking the menus will open them (like right click)</li>
+<li>Move menus around by dragging anywhere within them (hold <code class="language-plaintext highlighter-rouge">Ctrl</code> or use middle mouse)</li>
+</ul>
+</li>
+<li>Click GUI’s keybind widget now has a tooltip and is easier to use
+<ul>
+<li>Left click to modify the bind</li>
+<li>Clicking again (or pressing <code class="language-plaintext highlighter-rouge">Esc</code> will cancel)</li>
+<li>Right click to delete/reset the bind</li>
+</ul>
+</li>
+<li><code class="language-plaintext highlighter-rouge">.set</code> command can now use option id as an alternative to name</li>
+<li>Removed all server-side changes (should make singleplayer more stable)</li>
+</ul>
+<h3 id="removed-2">Removed</h3>
+<ul>
+<li>Mode option for nuker</li>
+</ul>
+<h3 id="fixed-10">Fixed</h3>
+<ul>
+<li>Absorption not being shown by Nametags</li>
+<li><code class="language-plaintext highlighter-rouge">.set</code> command not finding nested options</li>
+<li>Fixed incorrect angle calculations in combat modules</li>
+<li>Incorrect murderer detection on Hypixel’s Murder Mystery</li>
+<li>Incorrect murderer detection on PlayMCM</li>
+<li>No Fall Bucket mode getting stuck on the collection stage</li>
+<li>Dolphin Jesus jumping while in GUIs, even when out of water</li>
+<li>Xray GUI arrows not displaying with a transparent background</li>
+<li>Not being able to toggle mods or open Click GUI after toggling fullscreen mode</li>
+<li>Click GUI not always being saved on shutdown</li>
+<li>Issues caused when disabling the Click GUI</li>
+<li>Click GUI not rendering closed menus correctly until they are re-closed</li>
+<li>drop command not targetting correct slots</li>
+<li>Chams affecting models in the alt manager</li>
+<li>Smooth aim targetting incorrect positions</li>
+<li>Friends GUI causing a crash</li>
+<li>Alt GUI having transparent background while in-game</li>
+<li>Some vertical spacing problems with the HUD</li>
+<li>Cycler boxes in Click GUI not properly encasing children</li>
+<li>Freecam causing weird behavior while riding entities</li>
+<li>ChestStealer not functioning as expected</li>
+<li>Forge and Optifine support <del>(probably)</del></li>
+<li>AntiAFK “jump” option not working when a GUI is open</li>
+<li>AutoTool not applying to Nuker</li>
+<li>Fixed Riding “Entity Speed” not applying to boats</li>
+<li>Fixed Scaffold not placing glass blocks</li>
+</ul>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+<script>anchors.add();</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-143397381-1', 'auto');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>

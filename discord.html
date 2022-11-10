@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Discord verification</title>
+
+<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=es5%2CURL%2Chtml5shiv%2CElement.prototype.classList"></script>
+<script>
+        /* Functions */
+        function onRecaptcha() {
+            document.getElementById("theForm").submit();
+        }
+
+        function getProvidedId() {
+            // Impact bot gives us a nice, normal, query string
+            var query = new URLSearchParams(window.location.search)
+            return query.get("discord")
+        }
+
+        function getAlreadyMember() {
+            // The link in #verify, we don't need "guilds.join"
+            var query = new URLSearchParams(window.location.search)
+            return query.get("member") === "1"
+        }
+
+        function getAuthToken() {
+            // discord's implicit grant passes params as a #hash not a ?query, let's make a query object
+            var query = new URLSearchParams(window.location.hash)
+            return query.get("access_token")
+        }
+
+        function getOAuthUrl() {
+            return "https://discordapp.com/oauth2/authorize?client_id=452934110755684382&redirect_uri=https%3A%2F%2Fimpactclient.net%2Fdiscord.html&response_type=code&scope=identify" + (getAlreadyMember() ? "" : "%20guilds.join") + "&response_type=token"
+        }
+
+        function showOrHideStuff() {
+            var i, elm, authed, showIfAuthed, hideIfAuthed
+
+            authed = getAuthToken() || getProvidedId()
+            showIfAuthed = document.getElementsByClassName("show-if-authenticated")
+            hideIfAuthed = document.getElementsByClassName("hide-if-authenticated")
+
+            for (i = 0; i < showIfAuthed.length; i++) {
+                elm = showIfAuthed[i]
+                if (authed) {
+                    elm.classList.remove("hidden")
+                } else {
+                    elm.classList.add("hidden")
+                }
+            }
+
+            for (i = 0; i < hideIfAuthed.length; i++) {
+                elm = hideIfAuthed[i]
+                if (authed) {
+                    elm.classList.add("hidden")
+                } else {
+                    elm.classList.remove("hidden")
+                }
+            }
+        }
+
+        function gtag() {
+            if (!window.dataLayer) {
+                window.dataLayer = []
+            }
+            window.dataLayer.push(arguments)
+        }
+
+        function redirect(url) {
+            try {
+                window.location.replace(url);
+            } catch (e) {
+                window.location = url;
+            }
+        }
+    </script>
+<script>
+        /*
+        * Ok so let's try to redirect before even doing the <body>.
+        *
+        * We only want to redirect if auth is not done AND we don't need guilds.join.
+        * If we need guilds.join we want the user to read the landing page because
+        * leijurv is paranoid.
+        */
+        if (!getAuthToken() && !getProvidedId() && getAlreadyMember()) {
+            redirect(getOAuthUrl())
+        }
+    </script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143397381-1"></script>
+<script>
+        gtag('js', new Date())
+        gtag('config', 'UA-143397381-1')
+
+        // magic function that we never call, I assume GA uses this for something?
+        function getOutboundLink(label) {
+            gtag('event', 'click', {
+                'event_category': 'outbound',
+                'event_label': label,
+                'transport_type': 'beacon'
+            })
+        }
+    </script>
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="min/style-min.css" />
+</head>
+<body>
+<header>
+<div class="navbar-fixed">
+<nav role="navigation">
+<div class="nav-wrapper container">
+<a href="index.html" class="brand-logo"><h1>Impact</h1></a>
+</div>
+</nav>
+</div>
+</header>
+<noscript>
+    You must have javascript enabled.
+</noscript>
+<div class="section">
+<div class="container">
+<div class="row"><div class="col s12 center">The Discord has been terminated. Check back here later.</div></div>
+
+</div>
+</div>
+<div class="section show-if-authenticated hidden">
+<div class="container">
+<div class="row">
+<form id="theForm" class="col s12 center" method="post" action="http://impactclient.net/discordverify">
+<p class="large_text">Please prove you are not a robot:</p>
+<div class="g-recaptcha" data-callback="onRecaptcha" data-sitekey="6Lf19NcUAAAAADBY-60OxWuSMgr4XMH3aq1BZYRs"></div>
+<input type="hidden" id="token" name="token">
+<input type="hidden" id="id" name="discord">
+</form>
+</div>
+</div>
+</div>
+
+<script src="https://www.google.com/recaptcha/api.js" async></script>
+<script async>
+    document.getElementById("token").value = getAuthToken()
+    document.getElementById("id").value = getProvidedId()
+    document.getElementById("oauth_link").href = getOAuthUrl()
+
+    // Everything is hidden by default, show the stuff we want based on params etc
+    showOrHideStuff()
+</script>
+</body>
+</html>
